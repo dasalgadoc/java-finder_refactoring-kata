@@ -39,9 +39,9 @@ public class FinderTests {
         Finder finder = new Finder(list);
 
         PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
-        assertEquals(null, result.P1);
+        assertEquals(null, result.personOne);
 
-        assertEquals(null, result.P2);
+        assertEquals(null, result.personTwo);
     }
 
     @Test
@@ -53,8 +53,8 @@ public class FinderTests {
 
         PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
 
-        assertEquals(null, result.P1);
-        assertEquals(null, result.P2);
+        assertEquals(null, result.personOne);
+        assertEquals(null, result.personTwo);
     }
 
     @Test
@@ -66,8 +66,8 @@ public class FinderTests {
 
         PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
 
-        assertEquals(sue, result.P1);
-        assertEquals(greg, result.P2);
+        assertEquals(sue, result.personOne);
+        assertEquals(greg, result.personTwo);
     }
 
     @Test
@@ -80,8 +80,8 @@ public class FinderTests {
 
         PeopleTuple result = finder.Find(AgeDifferenceCriteria.Two);
 
-        assertEquals(greg, result.P1);
-        assertEquals(mike, result.P2);
+        assertEquals(greg, result.personOne);
+        assertEquals(mike, result.personTwo);
     }
 
     @Test
@@ -95,8 +95,8 @@ public class FinderTests {
 
         PeopleTuple result = finder.Find(AgeDifferenceCriteria.Two);
 
-        assertEquals(sue, result.P1);
-        assertEquals(sarah, result.P2);
+        assertEquals(sue, result.personOne);
+        assertEquals(sarah, result.personTwo);
     }
 
     @Test
@@ -111,8 +111,8 @@ public class FinderTests {
 
         PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
 
-        assertEquals(sue, result.P1);
-        assertEquals(greg, result.P2);
+        assertEquals(sue, result.personOne);
+        assertEquals(greg, result.personTwo);
     }
 
 }

@@ -17,13 +17,13 @@ public class Finder {
             for (int j = i + 1; j < people.size(); j++) {
                 PeopleTuple personTuple = new PeopleTuple();
                 if (people.get(i).birthDate.getTime() < people.get(j).birthDate.getTime()) {
-                    personTuple.P1 = people.get(i);
-                    personTuple.P2 = people.get(j);
+                    personTuple.personOne = people.get(i);
+                    personTuple.personTwo = people.get(j);
                 } else {
-                    personTuple.P1 = people.get(j);
-                    personTuple.P2 = people.get(i);
+                    personTuple.personOne = people.get(j);
+                    personTuple.personTwo = people.get(i);
                 }
-                personTuple.D = personTuple.P2.birthDate.getTime() - personTuple.P1.birthDate.getTime();
+                personTuple.birthDateDifferenceInMilliseconds = personTuple.personTwo.birthDate.getTime() - personTuple.personOne.birthDate.getTime();
                 peopleTuplesRows.add(personTuple);
             }
         }
@@ -36,13 +36,13 @@ public class Finder {
         for (PeopleTuple peopleTuple : peopleTuplesRows) {
             switch (ageDifferenceCriteria) {
                 case One:
-                    if (peopleTuple.D < answer.D) {
+                    if (peopleTuple.birthDateDifferenceInMilliseconds < answer.birthDateDifferenceInMilliseconds) {
                         answer = peopleTuple;
                     }
                     break;
 
                 case Two:
-                    if (peopleTuple.D > answer.D) {
+                    if (peopleTuple.birthDateDifferenceInMilliseconds > answer.birthDateDifferenceInMilliseconds) {
                         answer = peopleTuple;
                     }
                     break;
