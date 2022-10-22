@@ -38,7 +38,7 @@ public class FinderTests {
         List<Person> list = new ArrayList<Person>();
         Finder finder = new Finder(list);
 
-        PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
+        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Lowest);
         assertEquals(null, result.personOne);
 
         assertEquals(null, result.personTwo);
@@ -51,7 +51,7 @@ public class FinderTests {
 
         Finder finder = new Finder(list);
 
-        PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
+        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Lowest);
 
         assertEquals(null, result.personOne);
         assertEquals(null, result.personTwo);
@@ -64,7 +64,7 @@ public class FinderTests {
         list.add(greg);
         Finder finder = new Finder(list);
 
-        PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
+        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Lowest);
 
         assertEquals(sue, result.personOne);
         assertEquals(greg, result.personTwo);
@@ -78,7 +78,7 @@ public class FinderTests {
 
         Finder finder = new Finder(list);
 
-        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Two);
+        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Highest);
 
         assertEquals(greg, result.personOne);
         assertEquals(mike, result.personTwo);
@@ -93,7 +93,7 @@ public class FinderTests {
         list.add(greg);
         Finder finder = new Finder(list);
 
-        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Two);
+        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Highest);
 
         assertEquals(sue, result.personOne);
         assertEquals(sarah, result.personTwo);
@@ -109,7 +109,7 @@ public class FinderTests {
 
         Finder finder = new Finder(list);
 
-        PeopleTuple result = finder.Find(AgeDifferenceCriteria.One);
+        PeopleTuple result = finder.Find(AgeDifferenceCriteria.Lowest);
 
         assertEquals(sue, result.personOne);
         assertEquals(greg, result.personTwo);

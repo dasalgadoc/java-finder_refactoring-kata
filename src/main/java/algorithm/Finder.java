@@ -35,13 +35,13 @@ public class Finder {
         PeopleTuple answer = peopleTuplesRows.get(0);
         for (PeopleTuple peopleTuple : peopleTuplesRows) {
             switch (ageDifferenceCriteria) {
-                case One:
+                case Lowest:
                     if (peopleTuple.birthDateDifferenceInMilliseconds < answer.birthDateDifferenceInMilliseconds) {
                         answer = peopleTuple;
                     }
                     break;
 
-                case Two:
+                case Highest:
                     if (peopleTuple.birthDateDifferenceInMilliseconds > answer.birthDateDifferenceInMilliseconds) {
                         answer = peopleTuple;
                     }
