@@ -2,7 +2,7 @@ package algorithm;
 
 import java.util.Date;
 
-public class Thing {
+public class Person {
 	public String name;
 	public Date birthDate;
 
@@ -19,4 +19,3 @@ public class Thing {
 		this.birthDate = birthDate;
 	}
 }
-
