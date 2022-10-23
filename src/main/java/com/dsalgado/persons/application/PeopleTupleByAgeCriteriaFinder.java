@@ -31,20 +31,10 @@ public class PeopleTupleByAgeCriteriaFinder {
 
     private List<PeopleTuple> generatePeopleTupleCombinations() {
         List<PeopleTuple> peopleTuplesCombinations = new ArrayList<PeopleTuple>();
-
+        people.sort((firstPerson, secondPerson) -> firstPerson.getBirthDateInMilliseconds().compareTo(secondPerson.getBirthDateInMilliseconds()));
         for (int i = 0; i < people.size() - 1; i++) {
             for (int j = i + 1; j < people.size(); j++) {
-                Person youngest;
-                Person oldest;
-                if (people.get(i).getBirthDateInMilliseconds() < people.get(j).getBirthDateInMilliseconds()) {
-                    youngest = people.get(i);
-                    oldest = people.get(j);
-                } else {
-                    youngest = people.get(j);
-                    oldest = people.get(i);
-                }
-                PeopleTuple peopleTuple = new PeopleTuple(youngest, oldest);
-                peopleTuplesCombinations.add(peopleTuple);
+                peopleTuplesCombinations.add(new PeopleTuple(people.get(i), people.get(j)));
             }
         }
         return peopleTuplesCombinations;
