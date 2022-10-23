@@ -1,7 +1,7 @@
 package algorithm;
 
 public class PeopleTuple {
-    public Person personOne;
-    public Person personTwo;
+    public Person youngest;
+    public Person oldest;
     public long birthDateDifferenceInMilliseconds;
 }

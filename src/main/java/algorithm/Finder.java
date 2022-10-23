@@ -11,29 +11,29 @@ public class Finder {
     }
 
     public PeopleTuple Find(AgeDifferenceCriteria ageDifferenceCriteria) {
-        List<PeopleTuple> peopleTuplesRows = new ArrayList<PeopleTuple>();
+        List<PeopleTuple> peopleTuplesCombinations = new ArrayList<PeopleTuple>();
 
         for (int i = 0; i < people.size() - 1; i++) {
             for (int j = i + 1; j < people.size(); j++) {
                 PeopleTuple personTuple = new PeopleTuple();
                 if (people.get(i).birthDate.getTime() < people.get(j).birthDate.getTime()) {
-                    personTuple.personOne = people.get(i);
-                    personTuple.personTwo = people.get(j);
+                    personTuple.youngest = people.get(i);
+                    personTuple.oldest = people.get(j);
                 } else {
-                    personTuple.personOne = people.get(j);
-                    personTuple.personTwo = people.get(i);
+                    personTuple.youngest = people.get(j);
+                    personTuple.oldest = people.get(i);
                 }
-                personTuple.birthDateDifferenceInMilliseconds = personTuple.personTwo.birthDate.getTime() - personTuple.personOne.birthDate.getTime();
-                peopleTuplesRows.add(personTuple);
+                personTuple.birthDateDifferenceInMilliseconds = personTuple.oldest.birthDate.getTime() - personTuple.youngest.birthDate.getTime();
+                peopleTuplesCombinations.add(personTuple);
             }
         }
 
-        if (peopleTuplesRows.size() < 1) {
+        if (peopleTuplesCombinations.size() < 1) {
             return new PeopleTuple();
         }
 
-        PeopleTuple answer = peopleTuplesRows.get(0);
-        for (PeopleTuple peopleTuple : peopleTuplesRows) {
+        PeopleTuple answer = peopleTuplesCombinations.get(0);
+        for (PeopleTuple peopleTuple : peopleTuplesCombinations) {
             switch (ageDifferenceCriteria) {
                 case Lowest:
                     if (peopleTuple.birthDateDifferenceInMilliseconds < answer.birthDateDifferenceInMilliseconds) {
