@@ -3,10 +3,10 @@ package algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Finder {
+public class PeopleTupleByAgeCriteriaFinder {
     private final List<Person> people;
 
-    public Finder(List<Person> people) {
+    public PeopleTupleByAgeCriteriaFinder(List<Person> people) {
         this.people = people;
     }
 
