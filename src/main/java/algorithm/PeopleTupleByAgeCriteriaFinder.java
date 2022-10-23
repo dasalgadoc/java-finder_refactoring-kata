@@ -10,7 +10,7 @@ public class PeopleTupleByAgeCriteriaFinder {
         this.people = people;
     }
 
-    public PeopleTuple Find(AgeDifferenceCriteria ageDifferenceCriteria) {
+    public PeopleTuple find(AgeDifferenceCriteria ageDifferenceCriteria) {
         List<PeopleTuple> peopleTuplesCombinations = new ArrayList<PeopleTuple>();
 
         for (int i = 0; i < people.size() - 1; i++) {
