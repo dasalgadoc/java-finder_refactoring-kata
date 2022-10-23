@@ -86,6 +86,21 @@ public class PeopleTupleByAgeCriteriaFinderTests {
     }
 
     @Test
+    public void Returns_Furthest_Two_For_Four_People_Highest() {
+        List<Person> list = new ArrayList<Person>();
+        list.add(sue);
+        list.add(mike);
+        list.add(greg);
+        list.add(sarah);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+
+        Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Highest);
+
+        assertEquals(sue, peopleTuple.get().getYoungest());
+        assertEquals(sarah, peopleTuple.get().getOldest());
+    }
+
+    @Test
     public void Returns_Closest_Two_For_Four_People() {
         List<Person> list = new ArrayList<Person>();
         list.add(sue);
