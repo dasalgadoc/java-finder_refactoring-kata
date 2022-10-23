@@ -1,5 +1,7 @@
 package com.dsalgado.persons.application;
 
+import com.dsalgado.persons.domain.AgeComparorByCriteria;
+import com.dsalgado.persons.domain.AgeComparorFactory;
 import com.dsalgado.persons.domain.AgeDifferenceCriteria;
 import com.dsalgado.persons.domain.PeopleTuple;
 import com.dsalgado.persons.domain.Person;
@@ -10,9 +12,11 @@ import java.util.Optional;
 
 public class PeopleTupleByAgeCriteriaFinder {
     private final List<Person> people;
+    private final AgeComparorFactory ageComparorFactory;
 
-    public PeopleTupleByAgeCriteriaFinder(List<Person> people) {
+    public PeopleTupleByAgeCriteriaFinder(List<Person> people, AgeComparorFactory ageComparorFactory) {
         this.people = people;
+        this.ageComparorFactory = ageComparorFactory;
     }
 
     public Optional<PeopleTuple> find(AgeDifferenceCriteria ageDifferenceCriteria) {
@@ -40,19 +44,8 @@ public class PeopleTupleByAgeCriteriaFinder {
 
         PeopleTuple answer = peopleTuplesCombinations.get(0);
         for (PeopleTuple peopleTuple : peopleTuplesCombinations) {
-            switch (ageDifferenceCriteria) {
-                case Lowest:
-                    if (peopleTuple.getBirthDateDifferenceInMilliseconds() < answer.getBirthDateDifferenceInMilliseconds()) {
-                        answer = peopleTuple;
-                    }
-                    break;
-
-                case Highest:
-                    if (peopleTuple.getBirthDateDifferenceInMilliseconds() > answer.getBirthDateDifferenceInMilliseconds()) {
-                        answer = peopleTuple;
-                    }
-                    break;
-            }
+            AgeComparorByCriteria ageComparorByCriteria = ageComparorFactory.getAgeComparor(ageDifferenceCriteria);
+            answer = ageComparorByCriteria.resolveAgeDifference(peopleTuple, answer);
         }
 
         return Optional.of(answer);

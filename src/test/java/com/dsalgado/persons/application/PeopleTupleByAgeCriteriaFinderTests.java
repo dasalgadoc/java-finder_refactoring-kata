@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import com.dsalgado.persons.domain.AgeComparorFactory;
 import com.dsalgado.persons.domain.AgeDifferenceCriteria;
 import org.junit.Test;
 
@@ -14,6 +15,8 @@ import com.dsalgado.persons.domain.PeopleTuple;
 import com.dsalgado.persons.domain.Person;
 
 public class PeopleTupleByAgeCriteriaFinderTests {
+
+    private final AgeComparorFactory ageComparorFactory = new AgeComparorFactory();
 
     Person sue =    new Person("Sue", new Date(50, 0, 1));
     Person greg =   new Person("Greg", new Date(52, 5, 1));
@@ -23,7 +26,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
     @Test
     public void Returns_Empty_Tuple_When_Given_Empty_List() {
         List<Person> list = new ArrayList<Person>();
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Lowest);
 
@@ -35,7 +38,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         List<Person> list = new ArrayList<Person>();
         list.add(sue);
 
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Lowest);
 
@@ -47,7 +50,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         List<Person> list = new ArrayList<Person>();
         list.add(sue);
         list.add(greg);
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Lowest);
 
@@ -61,7 +64,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         list.add(mike);
         list.add(greg);
 
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Highest);
 
@@ -76,7 +79,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         list.add(sarah);
         list.add(mike);
         list.add(greg);
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Highest);
 
@@ -91,7 +94,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         list.add(mike);
         list.add(greg);
         list.add(sarah);
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Highest);
 
@@ -107,7 +110,7 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         list.add(mike);
         list.add(greg);
 
-        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
+        PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list, ageComparorFactory);
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Lowest);
 
