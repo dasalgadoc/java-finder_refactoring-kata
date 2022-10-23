@@ -6,11 +6,9 @@ public class Person {
     private String name;
     public Date birthDate;
 
-    public static Person create(String name, Date birthDate){
-        Person person = new Person();
-        person.name = name;
-        person.birthDate = birthDate;
-        return person;
+    public Person(String name, Date birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
     }
 
     public String getName() {

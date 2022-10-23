@@ -16,10 +16,10 @@ import algorithm.Person;
 
 public class PeopleTupleByAgeCriteriaFinderTests {
 
-    Person sue = Person.create("Sue", new Date(50, 0, 1));
-    Person greg = Person.create("Greg", new Date(52, 5, 1));
-    Person sarah = Person.create("Sarah", new Date(82, 0, 1));
-    Person mike = Person.create("Mike", new Date(79, 0, 1));
+    Person sue =    new Person("Sue", new Date(50, 0, 1));
+    Person greg =   new Person("Greg", new Date(52, 5, 1));
+    Person sarah =  new Person("Sarah", new Date(82, 0, 1));
+    Person mike =   new Person("Mike", new Date(79, 0, 1));
 
     @Test
     public void Returns_Empty_Results_When_Given_Empty_List() {
