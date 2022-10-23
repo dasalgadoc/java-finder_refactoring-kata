@@ -16,16 +16,17 @@ public class PeopleTupleByAgeCriteriaFinder {
 
         for (int i = 0; i < people.size() - 1; i++) {
             for (int j = i + 1; j < people.size(); j++) {
-                PeopleTuple personTuple = new PeopleTuple();
+                Person youngest;
+                Person oldest;
                 if (people.get(i).getBirthDate().getTime() < people.get(j).getBirthDate().getTime()) {
-                    personTuple.setYoungest(people.get(i));
-                    personTuple.setOldest(people.get(j));
+                    youngest = people.get(i);
+                    oldest = people.get(j);
                 } else {
-                    personTuple.setYoungest(people.get(j));
-                    personTuple.setOldest(people.get(i));
+                    youngest = people.get(j);
+                    oldest = people.get(i);
                 }
-                personTuple.setBirthDateDifferenceInMilliseconds();
-                peopleTuplesCombinations.add(personTuple);
+                PeopleTuple peopleTuple = new PeopleTuple(youngest, oldest);
+                peopleTuplesCombinations.add(peopleTuple);
             }
         }
 

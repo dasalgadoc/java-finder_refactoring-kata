@@ -5,20 +5,18 @@ public class PeopleTuple {
     private Person oldest;
     private Long birthDateDifferenceInMilliseconds;
 
+    public PeopleTuple(Person youngest, Person oldest) {
+        this.youngest = youngest;
+        this.oldest = oldest;
+        setBirthDateDifferenceInMilliseconds();
+    }
+
     public Person getYoungest() {
         return youngest;
     }
 
-    public void setYoungest(Person youngest) {
-        this.youngest = youngest;
-    }
-
     public Person getOldest() {
         return oldest;
-    }
-
-    public void setOldest(Person oldest) {
-        this.oldest = oldest;
     }
 
     public Long getBirthDateDifferenceInMilliseconds() {
