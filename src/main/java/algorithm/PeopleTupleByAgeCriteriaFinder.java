@@ -24,7 +24,7 @@ public class PeopleTupleByAgeCriteriaFinder {
                     personTuple.setYoungest(people.get(j));
                     personTuple.setOldest(people.get(i));
                 }
-                personTuple.setBirthDateDifferenceInMilliseconds(personTuple.getOldest().getBirthDate().getTime() - personTuple.getYoungest().getBirthDate().getTime());
+                personTuple.setBirthDateDifferenceInMilliseconds();
                 peopleTuplesCombinations.add(personTuple);
             }
         }
