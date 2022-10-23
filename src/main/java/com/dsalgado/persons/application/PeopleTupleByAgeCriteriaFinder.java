@@ -1,4 +1,8 @@
-package algorithm;
+package com.dsalgado.persons.application;
+
+import com.dsalgado.persons.domain.AgeDifferenceCriteria;
+import com.dsalgado.persons.domain.PeopleTuple;
+import com.dsalgado.persons.domain.Person;
 
 import java.util.ArrayList;
 import java.util.List;

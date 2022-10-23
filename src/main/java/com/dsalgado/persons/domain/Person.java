@@ -1,4 +1,4 @@
-package algorithm;
+package com.dsalgado.persons.domain;
 
 import java.util.Date;
 

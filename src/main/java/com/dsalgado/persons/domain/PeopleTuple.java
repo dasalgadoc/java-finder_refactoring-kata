@@ -1,4 +1,4 @@
-package algorithm;
+package com.dsalgado.persons.domain;
 
 public class PeopleTuple {
     private Person youngest;

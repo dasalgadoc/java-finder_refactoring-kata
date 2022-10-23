@@ -1,4 +1,4 @@
-package test;
+package com.dsalgado.persons.application;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import algorithm.PeopleTupleByAgeCriteriaFinder;
+import com.dsalgado.persons.application.PeopleTupleByAgeCriteriaFinder;
+import com.dsalgado.persons.domain.AgeDifferenceCriteria;
 import org.junit.Test;
 
-import algorithm.PeopleTuple;
-import algorithm.AgeDifferenceCriteria;
-import algorithm.Person;
+import com.dsalgado.persons.domain.PeopleTuple;
+import com.dsalgado.persons.domain.Person;
 
 public class PeopleTupleByAgeCriteriaFinderTests {
 
