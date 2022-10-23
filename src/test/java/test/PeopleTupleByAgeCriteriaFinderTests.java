@@ -22,27 +22,27 @@ public class PeopleTupleByAgeCriteriaFinderTests {
     Person mike =   new Person("Mike", new Date(79, 0, 1));
 
     @Test
-    public void Returns_Empty_Results_When_Given_Empty_List() {
+    public void Returns_Empty_Tuple_When_Given_Empty_List() {
         List<Person> list = new ArrayList<Person>();
         PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
 
-        PeopleTuple result = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
-        assertEquals(null, result.youngest);
+        PeopleTuple peopleTuple = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
+        assertEquals(null, peopleTuple.youngest);
 
-        assertEquals(null, result.oldest);
+        assertEquals(null, peopleTuple.oldest);
     }
 
     @Test
-    public void Returns_Empty_Results_When_Given_One_Person() {
+    public void Returns_Empty_Tuple_When_Given_One_Person() {
         List<Person> list = new ArrayList<Person>();
         list.add(sue);
 
         PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
 
-        PeopleTuple result = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
+        PeopleTuple peopleTuple = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
 
-        assertEquals(null, result.youngest);
-        assertEquals(null, result.oldest);
+        assertEquals(null, peopleTuple.youngest);
+        assertEquals(null, peopleTuple.oldest);
     }
 
     @Test
@@ -52,10 +52,10 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         list.add(greg);
         PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
 
-        PeopleTuple result = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
+        PeopleTuple peopleTuple = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
 
-        assertEquals(sue, result.youngest);
-        assertEquals(greg, result.oldest);
+        assertEquals(sue, peopleTuple.youngest);
+        assertEquals(greg, peopleTuple.oldest);
     }
 
     @Test
@@ -66,10 +66,10 @@ public class PeopleTupleByAgeCriteriaFinderTests {
 
         PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
 
-        PeopleTuple result = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Highest);
+        PeopleTuple peopleTuple = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Highest);
 
-        assertEquals(greg, result.youngest);
-        assertEquals(mike, result.oldest);
+        assertEquals(greg, peopleTuple.youngest);
+        assertEquals(mike, peopleTuple.oldest);
     }
 
     @Test
@@ -81,10 +81,10 @@ public class PeopleTupleByAgeCriteriaFinderTests {
         list.add(greg);
         PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
 
-        PeopleTuple result = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Highest);
+        PeopleTuple peopleTuple = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Highest);
 
-        assertEquals(sue, result.youngest);
-        assertEquals(sarah, result.oldest);
+        assertEquals(sue, peopleTuple.youngest);
+        assertEquals(sarah, peopleTuple.oldest);
     }
 
     @Test
@@ -97,10 +97,10 @@ public class PeopleTupleByAgeCriteriaFinderTests {
 
         PeopleTupleByAgeCriteriaFinder peopleTupleByAgeCriteriaFinder = new PeopleTupleByAgeCriteriaFinder(list);
 
-        PeopleTuple result = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
+        PeopleTuple peopleTuple = peopleTupleByAgeCriteriaFinder.Find(AgeDifferenceCriteria.Lowest);
 
-        assertEquals(sue, result.youngest);
-        assertEquals(greg, result.oldest);
+        assertEquals(sue, peopleTuple.youngest);
+        assertEquals(greg, peopleTuple.oldest);
     }
 
 }
