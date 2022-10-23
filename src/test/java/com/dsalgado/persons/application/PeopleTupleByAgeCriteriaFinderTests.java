@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import com.dsalgado.persons.application.PeopleTupleByAgeCriteriaFinder;
 import com.dsalgado.persons.domain.AgeDifferenceCriteria;
 import org.junit.Test;
 
