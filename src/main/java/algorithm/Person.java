@@ -11,8 +11,8 @@ public class Person {
         this.birthDate = birthDate;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public Long getBirthDateInMilliseconds(){
+        return birthDate.getTime();
     }
 
 }

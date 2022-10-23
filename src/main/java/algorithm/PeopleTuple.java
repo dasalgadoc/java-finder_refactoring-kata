@@ -24,6 +24,6 @@ public class PeopleTuple {
     }
 
     public void setBirthDateDifferenceInMilliseconds() {
-        this.birthDateDifferenceInMilliseconds = oldest.getBirthDate().getTime() - youngest.getBirthDate().getTime();
+        this.birthDateDifferenceInMilliseconds = oldest.getBirthDateInMilliseconds() - youngest.getBirthDateInMilliseconds();
     }
 }

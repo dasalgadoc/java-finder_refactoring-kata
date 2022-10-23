@@ -18,7 +18,7 @@ public class PeopleTupleByAgeCriteriaFinder {
             for (int j = i + 1; j < people.size(); j++) {
                 Person youngest;
                 Person oldest;
-                if (people.get(i).getBirthDate().getTime() < people.get(j).getBirthDate().getTime()) {
+                if (people.get(i).getBirthDateInMilliseconds() < people.get(j).getBirthDateInMilliseconds()) {
                     youngest = people.get(i);
                     oldest = people.get(j);
                 } else {
