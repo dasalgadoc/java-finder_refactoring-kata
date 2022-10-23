@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Person {
     private String name;
-    public Date birthDate;
+    private Date birthDate;
 
     public Person(String name, Date birthDate) {
         this.name = name;
