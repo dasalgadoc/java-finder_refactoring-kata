@@ -1,6 +1,8 @@
 package com.dsalgado.persons.domain;
 
+import java.util.List;
+
 public interface AgeComparorByCriteria {
-    PeopleTuple resolveAgeDifference(PeopleTuple actualCandidate, PeopleTuple previousCandidate);
+    PeopleTuple getRequestedPeopleTuple(List<PeopleTuple> peopleTuples);
 
 }

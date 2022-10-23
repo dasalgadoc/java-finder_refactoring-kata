@@ -26,7 +26,7 @@ public class PeopleTupleByAgeCriteriaFinder {
             return Optional.empty();
         }
 
-        return Optional.of(getPeopleTupleByAgeCriteria(ageDifferenceCriteria, peopleTuplesCombinations));
+        return Optional.of(getRequestedPeopleTupleByAgeCriteria(ageDifferenceCriteria, peopleTuplesCombinations));
     }
 
     private List<PeopleTuple> generatePeopleTupleCombinations() {
@@ -50,13 +50,9 @@ public class PeopleTupleByAgeCriteriaFinder {
         return peopleTuplesCombinations;
     }
 
-    private PeopleTuple getPeopleTupleByAgeCriteria(AgeDifferenceCriteria ageDifferenceCriteria, List<PeopleTuple> peopleTuplesCombinations) {
-        PeopleTuple answer = peopleTuplesCombinations.get(0);
+    private PeopleTuple getRequestedPeopleTupleByAgeCriteria(AgeDifferenceCriteria ageDifferenceCriteria, List<PeopleTuple> peopleTuplesCombinations) {
         AgeComparorByCriteria ageComparorByCriteria = ageComparorFactory.getAgeComparor(ageDifferenceCriteria);
-        for (PeopleTuple peopleTuple : peopleTuplesCombinations) {
-            answer = ageComparorByCriteria.resolveAgeDifference(peopleTuple, answer);
-        }
-        return answer;
+        return ageComparorByCriteria.getRequestedPeopleTuple(peopleTuplesCombinations);
     }
 
 }
