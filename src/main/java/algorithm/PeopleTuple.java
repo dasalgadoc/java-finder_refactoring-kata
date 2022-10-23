@@ -3,7 +3,7 @@ package algorithm;
 public class PeopleTuple {
     private Person youngest;
     private Person oldest;
-    private long birthDateDifferenceInMilliseconds;
+    private Long birthDateDifferenceInMilliseconds;
 
     public Person getYoungest() {
         return youngest;
@@ -21,7 +21,7 @@ public class PeopleTuple {
         this.oldest = oldest;
     }
 
-    public long getBirthDateDifferenceInMilliseconds() {
+    public Long getBirthDateDifferenceInMilliseconds() {
         return birthDateDifferenceInMilliseconds;
     }
 
