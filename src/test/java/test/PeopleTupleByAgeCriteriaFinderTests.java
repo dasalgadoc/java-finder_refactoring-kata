@@ -52,8 +52,8 @@ public class PeopleTupleByAgeCriteriaFinderTests {
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Lowest);
 
-        assertEquals(sue, peopleTuple.get().youngest);
-        assertEquals(greg, peopleTuple.get().oldest);
+        assertEquals(sue, peopleTuple.get().getYoungest());
+        assertEquals(greg, peopleTuple.get().getOldest());
     }
 
     @Test
@@ -66,8 +66,8 @@ public class PeopleTupleByAgeCriteriaFinderTests {
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Highest);
 
-        assertEquals(greg, peopleTuple.get().youngest);
-        assertEquals(mike, peopleTuple.get().oldest);
+        assertEquals(greg, peopleTuple.get().getYoungest());
+        assertEquals(mike, peopleTuple.get().getOldest());
     }
 
     @Test
@@ -81,8 +81,8 @@ public class PeopleTupleByAgeCriteriaFinderTests {
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Highest);
 
-        assertEquals(sue, peopleTuple.get().youngest);
-        assertEquals(sarah, peopleTuple.get().oldest);
+        assertEquals(sue, peopleTuple.get().getYoungest());
+        assertEquals(sarah, peopleTuple.get().getOldest());
     }
 
     @Test
@@ -97,8 +97,8 @@ public class PeopleTupleByAgeCriteriaFinderTests {
 
         Optional<PeopleTuple> peopleTuple = peopleTupleByAgeCriteriaFinder.find(AgeDifferenceCriteria.Lowest);
 
-        assertEquals(sue, peopleTuple.get().youngest);
-        assertEquals(greg, peopleTuple.get().oldest);
+        assertEquals(sue, peopleTuple.get().getYoungest());
+        assertEquals(greg, peopleTuple.get().getOldest());
     }
 
 }

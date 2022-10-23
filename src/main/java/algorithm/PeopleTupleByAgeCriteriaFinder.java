@@ -18,13 +18,13 @@ public class PeopleTupleByAgeCriteriaFinder {
             for (int j = i + 1; j < people.size(); j++) {
                 PeopleTuple personTuple = new PeopleTuple();
                 if (people.get(i).getBirthDate().getTime() < people.get(j).getBirthDate().getTime()) {
-                    personTuple.youngest = people.get(i);
-                    personTuple.oldest = people.get(j);
+                    personTuple.setYoungest(people.get(i));
+                    personTuple.setOldest(people.get(j));
                 } else {
-                    personTuple.youngest = people.get(j);
-                    personTuple.oldest = people.get(i);
+                    personTuple.setYoungest(people.get(j));
+                    personTuple.setOldest(people.get(i));
                 }
-                personTuple.birthDateDifferenceInMilliseconds = personTuple.oldest.getBirthDate().getTime() - personTuple.youngest.getBirthDate().getTime();
+                personTuple.setBirthDateDifferenceInMilliseconds(personTuple.getOldest().getBirthDate().getTime() - personTuple.getYoungest().getBirthDate().getTime());
                 peopleTuplesCombinations.add(personTuple);
             }
         }
@@ -37,13 +37,13 @@ public class PeopleTupleByAgeCriteriaFinder {
         for (PeopleTuple peopleTuple : peopleTuplesCombinations) {
             switch (ageDifferenceCriteria) {
                 case Lowest:
-                    if (peopleTuple.birthDateDifferenceInMilliseconds < answer.birthDateDifferenceInMilliseconds) {
+                    if (peopleTuple.getBirthDateDifferenceInMilliseconds() < answer.getBirthDateDifferenceInMilliseconds()) {
                         answer = peopleTuple;
                     }
                     break;
 
                 case Highest:
-                    if (peopleTuple.birthDateDifferenceInMilliseconds > answer.birthDateDifferenceInMilliseconds) {
+                    if (peopleTuple.getBirthDateDifferenceInMilliseconds() > answer.getBirthDateDifferenceInMilliseconds()) {
                         answer = peopleTuple;
                     }
                     break;
