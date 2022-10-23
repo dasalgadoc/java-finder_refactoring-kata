@@ -2,6 +2,7 @@ package algorithm;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class PeopleTupleByAgeCriteriaFinder {
     private final List<Person> people;
@@ -10,7 +11,7 @@ public class PeopleTupleByAgeCriteriaFinder {
         this.people = people;
     }
 
-    public PeopleTuple find(AgeDifferenceCriteria ageDifferenceCriteria) {
+    public Optional<PeopleTuple> find(AgeDifferenceCriteria ageDifferenceCriteria) {
         List<PeopleTuple> peopleTuplesCombinations = new ArrayList<PeopleTuple>();
 
         for (int i = 0; i < people.size() - 1; i++) {
@@ -29,7 +30,7 @@ public class PeopleTupleByAgeCriteriaFinder {
         }
 
         if (peopleTuplesCombinations.size() < 1) {
-            return new PeopleTuple();
+            return Optional.empty();
         }
 
         PeopleTuple answer = peopleTuplesCombinations.get(0);
@@ -49,6 +50,6 @@ public class PeopleTupleByAgeCriteriaFinder {
             }
         }
 
-        return answer;
+        return Optional.of(answer);
     }
 }
