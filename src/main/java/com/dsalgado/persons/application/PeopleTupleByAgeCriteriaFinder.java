@@ -20,12 +20,11 @@ public class PeopleTupleByAgeCriteriaFinder {
     }
 
     public Optional<PeopleTuple> find(AgeDifferenceCriteria ageDifferenceCriteria) {
-        List<PeopleTuple> peopleTuplesCombinations = generatePeopleTupleCombinations();
-
-        if (peopleTuplesCombinations.size() < 1) {
+        if(people.size() <= 1){
             return Optional.empty();
         }
 
+        List<PeopleTuple> peopleTuplesCombinations = generatePeopleTupleCombinations();
         return Optional.of(getRequestedPeopleTupleByAgeCriteria(ageDifferenceCriteria, peopleTuplesCombinations));
     }
 
